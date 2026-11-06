@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qovuu | Online data collection for research agencies</title>
+<meta name="description" content="Qovuu runs online data collection for market research agencies: quant and qual, scripted, quality-checked and delivered. Full site coming soon.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E4EFEC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F2A33" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Qovuu">
+<meta property="og:description" content="Online data collection for market research agencies. Full site coming soon.">
+<meta property="og:url" content="https://qovuu.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://qovuu.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='13' height='13' rx='3' fill='%232E7D7A'/%3E%3Crect x='17' y='2' width='13' height='13' rx='3' fill='%232E7D7A'/%3E%3Crect x='2' y='17' width='13' height='13' rx='3' fill='%232E7D7A'/%3E%3Crect x='17' y='17' width='13' height='13' rx='3' fill='%23D93D67'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face {
+    font-family: "Unbounded";
+    src: url("fonts/unbounded.woff2") format("woff2");
+    font-weight: 200 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Figtree";
+    src: url("fonts/figtree.woff2") format("woff2");
+    font-weight: 300 900;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #E4EFEC;        /* sea glass */
+    --ink: #0E2B36;       /* harbour */
+    --muted: #42606A;
+    --lagoon: #2E7D7A;    /* completes */
+    --shell: #CBDDD8;     /* open quota */
+    --hibiscus: #D93D67;  /* latest complete */
+    --gutter: clamp(1rem, 5vw, 4rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F2A33;
+      --ink: #E6F1EE;
+      --muted: #9DB8B5;
+      --lagoon: #4DAFA7;
+      --shell: #1D3F49;
+      --hibiscus: #FF6E92;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--hibiscus); color: #fff; }
+
+  .page {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 10vh, 7rem) var(--gutter) 3rem;
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-content: center;
+  }
+  @media (min-width: 860px) {
+    .page {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      align-items: end;
+    }
+  }
+
+  .wordmark {
+    margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+    font-family: "Unbounded", "Figtree", sans-serif;
+    font-weight: 650;
+    font-size: clamp(4rem, 23vw, 10.5rem);
+    line-height: 0.85;
+    letter-spacing: -0.045em;
+    margin-left: -0.04em;
+  }
+  @media (min-width: 860px) {
+    .wordmark { font-size: clamp(4rem, 10.5vw, 10.5rem); }
+  }
+
+  .lede {
+    margin: 0 0 2rem;
+    max-width: 30ch;
+    font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+    line-height: 1.35;
+    font-weight: 450;
+    text-wrap: pretty;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+  }
+  .status .dot {
+    flex: none;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--hibiscus);
+  }
+
+  .contact { margin: 0; color: var(--muted); }
+  .contact a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--lagoon);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+  .contact a:hover { text-decoration-color: var(--hibiscus); }
+  a:focus-visible {
+    outline: 2px solid var(--lagoon);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Quota grid: a fieldwork board filling up */
+  .field { margin: 0; width: 100%; max-width: 26rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(4px, 0.8vw, 7px);
+  }
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 22%;
+    background: var(--shell);
+    transition: background-color 420ms ease;
+  }
+  .cell.on { background: var(--lagoon); }
+  .cell.latest { background: var(--hibiscus); }
+  .field figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  footer {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem var(--gutter) 2rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cell { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <section>
+      <h1 class="wordmark">qovuu</h1>
+      <p class="lede">Online data collection for market research agencies. Quant and qual, scripted, quality-checked and delivered.</p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>In field now. Our full site is on its way.</p>
+      <p class="contact">Talk to us at <a href="mailto:hello@qovuu.com">hello@qovuu.com</a></p>
+    </section>
+
+    <figure class="field" aria-hidden="true">
+      <div class="grid" id="grid"></div>
+      <figcaption>Fieldwork in progress</figcaption>
+    </figure>
+  </main>
+
+  <footer>&copy; <span id="year">2026</span> Qovuu</footer>
+
+<script>
+(function () {
+  var COLS = 12, ROWS = 8, TOTAL = COLS * ROWS, TARGET = 71;
+  var grid = document.getElementById('grid');
+  var cells = [];
+  for (var i = 0; i < TOTAL; i++) {
+    var c = document.createElement('div');
+    c.className = 'cell';
+    grid.appendChild(c);
+    cells.push(c);
+  }
+
+  var order = cells.slice();
+  for (var j = order.length - 1; j > 0; j--) {
+    var k = Math.floor(Math.random() * (j + 1));
+    var t = order[j]; order[j] = order[k]; order[k] = t;
+  }
+  order = order.slice(0, TARGET);
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    order.forEach(function (c) { c.classList.add('on'); });
+    order[order.length - 1].classList.add('latest');
+  } else {
+    // Completes arrive fast at launch, then slow down, like a real field.
+    var DURATION = 2800, START = 350, prev = null;
+    order.forEach(function (c, n) {
+      var p = (n + 1) / TARGET;
+      setTimeout(function () {
+        if (prev) prev.classList.remove('latest');
+        c.classList.add('on', 'latest');
+        prev = c;
+      }, START + DURATION * p * p);
+    });
+  }
+
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
